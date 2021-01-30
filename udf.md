@@ -31,7 +31,6 @@ Objasnimo dodatne aspekte skeleta:
   određene ulazne argumente uvek vraća istu vrednost (možemo je
   posmatrati kao *matematičku funkciju*). U našem slučaju, rezultat će
   nam verovatno zavisiti od pročitanih podataka, pa naša funkcija nije
-  deterministična. Koristi se za optimizaciju upita.
 - `READS SQL DATA`: Može biti `CONTAINS SQL`, `READS SQL DATA` i
   `WRITES SQL DATA`. Nisam 100% siguran tačno u čemu se razlikuju. Po mom
   razumevanju, ograničavaju koje naredbe su dozvoljene unutar
