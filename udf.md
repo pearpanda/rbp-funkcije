@@ -143,7 +143,6 @@ FROM da.dosije AS d JOIN da.ispit AS i
      ON d.indeks = i.indeks
         AND status = 'o'
         AND ocena > 5
-WHERE indeks = v_indeks;
 ```
 
 Glavni upit je poseban tip dodele: dodeljujete vrednost promenljivoj
