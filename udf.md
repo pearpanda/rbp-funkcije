@@ -31,6 +31,7 @@ Objasnimo dodatne aspekte skeleta:
   određene ulazne argumente uvek vraća istu vrednost (možemo je
   posmatrati kao *matematičku funkciju*). U našem slučaju, rezultat će
   nam verovatno zavisiti od pročitanih podataka, pa naša funkcija nije
+  deterministična. Ovu naznaku DB2 koristi radi optimizacije upita.
 - `READS SQL DATA`: Može biti `CONTAINS SQL`, `READS SQL DATA` i
   `WRITES SQL DATA`. Nisam 100% siguran tačno u čemu se razlikuju. Po mom
   razumevanju, ograničavaju koje naredbe su dozvoljene unutar
@@ -138,10 +139,10 @@ Rezultat smestiti u `v_prosek`.
 ```sql
 SELECT AVG(1.0 * ocena)
     INTO v_prosek
-FROM da.dosije AS d JOIN da.ispit AS i
-     ON d.indeks = i.indeks
-        AND status = 'o'
-        AND ocena > 5
+FROM da.ispit
+WHERE indeks = v_indeks
+      AND status = 'o'
+      AND ocena > 5;
 ```
 
 Glavni upit je poseban tip dodele: dodeljujete vrednost promenljivoj
